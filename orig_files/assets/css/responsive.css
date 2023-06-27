@@ -1,0 +1,75 @@
+@media (max-width: 768px) {
+  body {
+    font-size: 13px;
+  }
+
+  #portfolio {
+    height: max-content;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centered-content .fullname {
+    font-size: 3rem;
+    line-height: 0.1;
+  }
+
+  .centered-content p {
+    font-size: 1.5rem;
+  }
+
+  .centered-content .brief {
+    font-size: 1.2rem;
+  }
+
+  header .logo h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: poppins;
+  }
+
+  .rounded-image {
+    max-width: 150px;
+    object-fit: cover;
+    object-position: center;
+    width: 150px;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .personality-item,
+  .image-column,
+  .column {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /********************About Section*******************/
+  .about-section {
+    flex-direction: column;
+  }
+
+  /**************************Skills Section***************************/
+  .skills {
+    flex-direction: column;
+  }
+
+  .content-column,
+  .graph-skill {
+    padding: 0;
+    flex: 0;
+  }
+}

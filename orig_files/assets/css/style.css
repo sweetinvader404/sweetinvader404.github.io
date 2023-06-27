@@ -1,0 +1,145 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #dfdfde;
+  --margin: 20px;
+  --theme-primary-color: #44cbe1;
+  --theme-background-color-main: #222222;
+  --neural-background-color: #2e313e;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--white);
+  margin: 0;
+  font-size: 13px;
+  font-family: poppins;
+  color: var(--white);
+}
+
+h1,
+h3,
+h4,
+h5,
+p {
+  font-family: poppins;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1,
+h3,
+h4,
+h5 {
+  font-size: 2.5rem;
+  line-height: 0.1rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+img {
+  object-fit: cover;
+}
+
+section {
+  padding: 2rem;
+}
+
+button {
+  padding: 1rem 3rem;
+  margin: 1rem 1rem;
+  border-radius: 5px;
+  font-family: poppins;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.centered-content .about-button {
+  border: 2px solid var(--theme-primary-color);
+  color: var(--theme-primary-color);
+  background: transparent;
+}
+
+.centered-content .hire-button,
+#about button {
+  /* background-color: var(--theme-primary-color); */
+  background-color: #1a8697;
+  border: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.centered-content .about-button:hover,
+.centered-content .hire-button:hover,
+#about button:hover {
+  background-color: var(--theme-primary-color);
+  transition: transform 0.3s ease-in;
+  color: #ffffff;
+}
+
+.centered-content .hire-button:hover,
+#about button:hover {
+  background-color: #17698c;
+}
+
+/*********Sections*********/
+#about,
+#about .about-section,
+#about .image-column,
+#about .two-column,
+#home,
+#personality .brief-description,
+#personality .three-column,
+#personality .personality-item,
+#personality .icon-box,
+#skills {
+  display: flex;
+}
+
+#about,
+#about .image-column,
+#about .content-column,
+#home,
+#personality,
+#personality .brief-description,
+#personality .three-column,
+#personality .icon-box,
+#skills {
+  justify-content: center;
+}
+
+#about,
+#about .image-column,
+#about .content-column,
+#home,
+#personality,
+#personality .brief-description,
+#personality .three-column,
+#personality .icon-box {
+  align-items: center;
+}
+
+/**************Implement lazyload***************/
+/* .lazy-section.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-section.visible {
+  opacity: 1;
+  visibility: visible;
+} */
