@@ -1,0 +1,56 @@
+#skills {
+  background-color: #13121a;
+}
+
+.content-column,
+.graph-skill {
+  flex: 1;
+  padding: 2rem;
+}
+
+#skills h3 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#skills .build {
+  font-size: 4.8rem;
+  font-family: poppins;
+}
+
+#skills h2 {
+  line-height: 0.1rem;
+}
+
+#skills .progress {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  height: 10px;
+  margin-bottom: 10px;
+}
+
+#skills .progress-bar {
+  background-color: #e0e0e0;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+#skills .progress-fill {
+  background-color: #158da0;
+  height: 100%;
+  border-radius: 4px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+#skills .progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+}
