@@ -88,7 +88,7 @@
     height: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     border-radius: 6px;
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     opacity: 1;
     transition: background-color 0.3s;
     z-index: -1;
