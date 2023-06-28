@@ -33,7 +33,7 @@ sections.forEach(e => {
 /****************Official FACEBOOK SDK****************** */
 window.fbAsyncInit = function () {
   FB.init({
-    appId: "{113810161758805}",
+    appId: "{591873306363263}",
     autoLogAppEvents: true,
     xfbml: true,
     version: "v14.0"
