@@ -33,3 +33,33 @@
 //   section.classList.add("hidden");
 //   observer.observe(section);
 // });
+
+// Intersection Observer callback function
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Load the image source from the data-src attribute
+      const image = entry.target.querySelector("img");
+      const src = image.getAttribute("data-src");
+      image.setAttribute("src", src);
+
+      // Stop observing the current entry
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+// Create a new Intersection Observer
+const options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1 // Trigger when 10% of the element is visible
+};
+
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Observe all elements with the 'section' class
+const sections = document.querySelectorAll(".section");
+sections.forEach(section => {
+  observer.observe(section);
+});
