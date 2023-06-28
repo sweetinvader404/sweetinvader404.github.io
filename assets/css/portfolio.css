@@ -68,7 +68,7 @@
 }
 .portfolio-item .content {
   position: absolute;
-  top: 0;
+  top: 0; /*check*/
   left: 0;
   height: 100%;
   width: 100%;
