@@ -149,6 +149,7 @@ const handleScroll = () => {
     !testimonial.classList.contains("lazy-loaded")
   ) {
     lazyLoadCSS("assets/css/testimonials.css");
+    lazyLoadCSS("assets/css/responsive.css");
     lazyLoadJS("assets/js/testimonials.js");
     testimonial.classList.add("lazy-loaded");
   }
@@ -158,6 +159,7 @@ const handleScroll = () => {
     !blog.classList.contains("lazy-loaded")
   ) {
     lazyLoadCSS("assets/css/blog.css");
+    lazyLoadCSS("assets/css/responsive.css");
     lazyLoadJS("assets/js/blog.js");
 
     blog.classList.add("lazy-loaded");
