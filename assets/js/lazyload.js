@@ -95,6 +95,7 @@ const handleScroll = () => {
     !personality.classList.contains("lazy-loaded")
   ) {
     lazyLoadCSS("assets/css/personalities.css");
+    lazyLoadCSS("assets/css/responsive.css");
     personality.classList.add("lazy-loaded");
   }
   if (
