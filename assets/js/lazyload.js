@@ -1,65 +1,167 @@
-// const lazySections = document.querySelectorAll(".lazy-section");
+// // Select the target section
+// const section = document.querySelector("#about");
 
-// const observer = new IntersectionObserver((entries, observer) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       // Add a class to make the section visible
-//       entry.target.classList.add("visible");
+// // Function to check if section is near the bottom of the viewport
+// const isSectionNearViewportBottom = () => {
+//   const rect = section.getBoundingClientRect();
+//   const viewportHeight = window.innerHeight;
 
-//       // Load resources when section becomes visible
-//       const lazyResources = entry.target.querySelectorAll("[data-lazy-src]");
-//       lazyResources.forEach((resource) => {
-//         if (resource.tagName === "IMG") {
-//           // For images
-//           const img = new Image();
-//           img.src = resource.dataset.lazySrc;
-//           img.addEventListener("load", () => {
-//             resource.setAttribute("src", img.src);
-//           });
-//         } else {
-//           // For other resources like videos or iframes
-//           resource.setAttribute("src", resource.dataset.lazySrc);
-//         }
-
-//         resource.removeAttribute("data-lazy-src");
-//       });
-
-//       observer.unobserve(entry.target);
-//     }
-//   });
-// });
-
-// lazySections.forEach((section) => {
-//   section.classList.add("hidden");
-//   observer.observe(section);
-// });
-
-// Intersection Observer callback function
-// function handleIntersection(entries, observer) {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       // Load the image source from the data-src attribute
-//       const image = entry.target.querySelector("img");
-//       const src = image.getAttribute("data-src");
-//       image.setAttribute("src", src);
-
-//       // Stop observing the current entry
-//       observer.unobserve(entry.target);
-//     }
-//   });
-// }
-
-// // Create a new Intersection Observer
-// const options = {
-//   root: null,
-//   rootMargin: "0px",
-//   threshold: 0.1 // Trigger when 10% of the element is visible
+//   return rect.top <= viewportHeight - 60;
 // };
 
-// const observer = new IntersectionObserver(handleIntersection, options);
+// // Event handler for scroll and load events
+// const handleScrollAndLoad = () => {
+//   if (isSectionNearViewportBottom()) {
+//     alert("The section is near the bottom of the viewport!");
+//     // Remove event listeners once the section is detected
+//     window.removeEventListener("scroll", handleScrollAndLoad);
+//     window.removeEventListener("load", handleScrollAndLoad);
+//   }
+// };
 
-// // Observe all elements with the 'section' class
-// const sections = document.querySelectorAll(".section");
-// sections.forEach(section => {
-//   observer.observe(section);
-// });
+// // Attach event listeners for scroll and load events
+// window.addEventListener("scroll", handleScrollAndLoad);
+// window.addEventListener("load", handleScrollAndLoad);
+
+/****************************lazyload************************* */
+// Function to check if section is near the bottom of the viewport
+// const isSectionNearViewportBottom = section => {
+//   const rect = section.getBoundingClientRect();
+//   const viewportHeight = window.innerHeight;
+
+//   return rect.top <= viewportHeight;
+// };
+// Lazy load JavaScript file
+// const lazyLoadJS = src => {
+//   const script = document.createElement("script");
+//   script.src = src;
+//   script.defer = true;
+//   document.head.appendChild(script);
+// };
+
+// Lazy load CSS file
+// const lazyLoadCSS = href => {
+//   const link = document.createElement("link");
+//   link.rel = "stylesheet";
+//   link.href = href;
+//   link.onload = () => {
+//     link.onload = null;
+//     link.removeAttribute("onload");
+//   };
+//   document.head.appendChild(link);
+// };
+// Check if each section is near the bottom of the viewport and lazy load corresponding files
+// Function to check if section is near the bottom of the viewport
+const isSectionNearViewportBottom = section => {
+  const rect = section.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  return rect.top <= viewportHeight;
+};
+
+// Lazy load JavaScript file
+const lazyLoadJS = src => {
+  const script = document.createElement("script");
+  script.src = src;
+  script.defer = true;
+  document.head.appendChild(script);
+};
+
+// Lazy load CSS file
+const lazyLoadCSS = href => {
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = href;
+  link.onload = () => {
+    link.onload = null;
+    link.removeAttribute("onload");
+  };
+  document.head.appendChild(link);
+};
+
+// Check if each section is near the bottom of the viewport and lazy load corresponding files
+const handleScroll = () => {
+  const personality = document.getElementById("personality");
+  const about = document.getElementById("about");
+  const skills = document.getElementById("skills");
+  const portfolio = document.getElementById("portfolio");
+  const qualifications = document.getElementById("qualifications");
+  const services = document.getElementById("services");
+  const testimonial = document.getElementById("testimonial");
+  const blog = document.getElementById("blog");
+  if (
+    personality &&
+    isSectionNearViewportBottom(personality) &&
+    !personality.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/personality.css");
+    personality.classList.add("lazy-loaded");
+  }
+  if (
+    about &&
+    isSectionNearViewportBottom(about) &&
+    !about.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/about.css");
+    about.classList.add("lazy-loaded");
+  }
+
+  if (
+    skills &&
+    isSectionNearViewportBottom(skills) &&
+    !skills.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/skills.css");
+    lazyLoadJS("assets/js/skills.js");
+    skills.classList.add("lazy-loaded");
+  }
+  if (
+    portfolio &&
+    isSectionNearViewportBottom(portfolio) &&
+    !portfolio.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/portfolio.css");
+    // lazyLoadJS("assets/js/portfolio.js");
+    lazyLoadCSS("assets/css/responsive.css");
+    portfolio.classList.add("lazy-loaded");
+  }
+  if (
+    qualifications &&
+    isSectionNearViewportBottom(qualifications) &&
+    !qualifications.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/qualifications.css");
+    qualifications.classList.add("lazy-loaded");
+  }
+  if (
+    services &&
+    isSectionNearViewportBottom(services) &&
+    !services.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/services.css");
+    lazyLoadCSS("assets/css/responsive.css");
+    services.classList.add("lazy-loaded");
+  }
+  if (
+    testimonial &&
+    isSectionNearViewportBottom(testimonial) &&
+    !testimonial.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/testimonials.css");
+    lazyLoadJS("assets/js/testimonials.js");
+    testimonial.classList.add("lazy-loaded");
+  }
+  if (
+    blog &&
+    isSectionNearViewportBottom(blog) &&
+    !blog.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/blog.css");
+    lazyLoadJS("assets/js/blog.js");
+
+    blog.classList.add("lazy-loaded");
+  }
+};
+
+// Attach event listener for scroll event
+window.addEventListener("scroll", handleScroll);
