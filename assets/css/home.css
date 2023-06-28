@@ -9,7 +9,9 @@
 }
 #home {
   height: 100vh;
+  max-width: 100vw;
 }
+
 .centered-content {
   text-align: center;
 }
