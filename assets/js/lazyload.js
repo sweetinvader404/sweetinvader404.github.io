@@ -94,7 +94,7 @@ const handleScroll = () => {
     isSectionNearViewportBottom(personality) &&
     !personality.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/personality.css");
+    lazyLoadCSS("assets/css/personalities.css");
     personality.classList.add("lazy-loaded");
   }
   if (
