@@ -140,7 +140,6 @@
     />
 
     <!-- JavaScript -->
-    <script src="assets/js/script.js" defer></script>
 
     <script src="assets/js/hamburger.js" defer></script>
     <script src="assets/js/neural.js" defer></script>
@@ -151,6 +150,8 @@
     <script src="assets/js/swiper.js" defer></script>
     <script src="assets/js/testimonials.js" defer></script>
     <script src="assets/js/blog.js" defer></script>
+    <script src="assets/js/worker.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"
@@ -1174,27 +1175,6 @@
     </section> -->
     <!-------------------- Contact Area (End) -------------------->
     <div id="fb-root"></div>
-    <script>
-      function chatboxInit() {
-        window.fbAsyncInit = function () {
-          FB.init({
-            xfbml: true,
-            version: "v14.0"
-          });
-        };
-        (function (d, s, id) {
-          var js,
-            fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src =
-            "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, "script", "facebook-jssdk");
-      }
-      chatboxInit();
-    </script>
 
     <div
       class="fb-customerchat"
