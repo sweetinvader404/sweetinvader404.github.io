@@ -3,7 +3,7 @@ const isSectionNearViewportBottom = section => {
   const rect = section.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  return (rect.top = viewportHeight + 20);
+  return (rect.top = viewportHeight - 10);
 };
 
 // Lazy load JavaScript file
