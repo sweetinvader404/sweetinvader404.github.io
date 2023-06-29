@@ -29,7 +29,7 @@ const lazyLoadCSS = href => {
 // Check if each section is near the bottom of the viewport and lazy load corresponding files
 const handleScroll = () => {
   const home = document.getElementById("home");
-  const personality = document.getElementById("personality");
+  // const personality = document.getElementById("personality");
   const about = document.getElementById("about");
   const skills = document.getElementById("skills");
   const portfolio = document.getElementById("portfolio");
@@ -48,16 +48,16 @@ const handleScroll = () => {
 
   //   home.classList.add("lazy-loaded");
   // }
-  if (
-    personality &&
-    isSectionNearViewportBottom(personality) &&
-    !personality.classList.contains("lazy-loaded")
-  ) {
-    // lazyLoadCSS("assets/css/combine.css");
-    lazyLoadCSS("assets/css/style.css");
-    lazyLoadCSS("assets/css/responsive.css");
-    personality.classList.add("lazy-loaded");
-  }
+  // if (
+  //   personality &&
+  //   isSectionNearViewportBottom(personality) &&
+  //   /!personality.classList.contains("lazy-loaded")
+  // ) {
+  //   // lazyLoadCSS("assets/css/combine.css");
+  //   // lazyLoadCSS("assets/css/style.css");
+  //   // lazyLoadCSS("assets/css/responsive.css");
+  //   personality.classList.add("lazy-loaded");
+  // }
   if (
     about &&
     isSectionNearViewportBottom(about) &&
