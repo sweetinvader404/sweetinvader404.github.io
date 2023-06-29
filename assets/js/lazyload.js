@@ -3,7 +3,7 @@ const isSectionNearViewportBottom = section => {
   const rect = section.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  return rect.top <= viewportHeight + 250;
+  return rect.top <= viewportHeight + 320;
 };
 
 // Lazy load JavaScript file
@@ -37,23 +37,23 @@ const handleScroll = () => {
   const services = document.getElementById("services");
   const testimonial = document.getElementById("testimonial");
   const blog = document.getElementById("blog");
-  if (
-    home &&
-    isSectionNearViewportBottom(home) &&
-    !home.classList.contains("lazy-loaded")
-  ) {
-    lazyLoadCSS("assets/css/home.css");
-    lazyLoadCSS("assets/css/style.css");
-    lazyLoadCSS("assets/css/responsive.css");
+  // if (
+  //   home &&
+  //   isSectionNearViewportBottom(home) &&
+  //   /!home.classList.contains("lazy-loaded")
+  // ) {
+  //   lazyLoadCSS("assets/css/home.css");
+  //   lazyLoadCSS("assets/css/style.css");
+  //   lazyLoadCSS("assets/css/responsive.css");
 
-    home.classList.add("lazy-loaded");
-  }
+  //   home.classList.add("lazy-loaded");
+  // }
   if (
     personality &&
     isSectionNearViewportBottom(personality) &&
     !personality.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
+    // lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
     personality.classList.add("lazy-loaded");
