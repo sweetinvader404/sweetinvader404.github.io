@@ -90,16 +90,16 @@ const handleScroll = () => {
     lazyLoadCSS("assets/css/qualifications.css");
     qualifications.classList.add("lazy-loaded");
   }
-  //   if (
-  //     services &&
-  //     isSectionNearViewportBottom(services) &&
-  //     services.classList.contains("lazy-loaded")
-  //   ) {
-  //     lazyLoadCSS("assets/css/style.css");
-  //     lazyLoadCSS("assets/css/responsive.css");
-  //     lazyLoadCSS("assets/css/services.css");
-  //     services.classList.add("lazy-loaded");
-  //   }
+  if (
+    services &&
+    isSectionNearViewportBottom(services) &&
+    services.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/style.css");
+    lazyLoadCSS("assets/css/responsive.css");
+    lazyLoadCSS("assets/css/services.css");
+    services.classList.add("lazy-loaded");
+  }
   if (
     testimonial &&
     isSectionNearViewportBottom(testimonial) &&
@@ -107,8 +107,9 @@ const handleScroll = () => {
   ) {
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
+    lazyLoadCSS("assets/css/swiper.css");
     lazyLoadCSS("assets/css/testimonials.css");
-
+    lazyLoadJS("assets/js/swiper.js");
     lazyLoadJS("assets/js/testimonials.js");
     testimonial.classList.add("lazy-loaded");
   }
@@ -119,7 +120,9 @@ const handleScroll = () => {
   ) {
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
+    lazyLoadCSS("assets/css/swiper.css");
     lazyLoadCSS("assets/css/blog.css");
+    lazyLoadJS("assets/js/swiper.js");
     lazyLoadJS("assets/js/blog.js");
     blog.classList.add("lazy-loaded");
   }
