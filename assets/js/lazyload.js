@@ -143,16 +143,16 @@ const handleScroll = () => {
     lazyLoadCSS("assets/css/qualifications.css");
     qualifications.classList.add("lazy-loaded");
   }
-  if (
-    services &&
-    isSectionNearViewportBottom(services) &&
-    !services.classList.contains("lazy-loaded")
-  ) {
-    lazyLoadCSS("assets/css/style.css");
-    lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/services.css");
-    services.classList.add("lazy-loaded");
-  }
+  //   if (
+  //     services &&
+  //     isSectionNearViewportBottom(services) &&
+  //     services.classList.contains("lazy-loaded")
+  //   ) {
+  //     lazyLoadCSS("assets/css/style.css");
+  //     lazyLoadCSS("assets/css/responsive.css");
+  //     lazyLoadCSS("assets/css/services.css");
+  //     services.classList.add("lazy-loaded");
+  //   }
   if (
     testimonial &&
     isSectionNearViewportBottom(testimonial) &&
