@@ -8,88 +8,88 @@
 
 /******************************End TypeWriter****************************** */
 /******************************Skills****************************** */
-if (typeof RocketLoader === "undefined") {
-  window.addEventListener("DOMContentLoaded", function () {
-    var e = document.querySelector(".skills");
-    e.getBoundingClientRect().top;
-    var t = window.innerHeight,
-      r = !1;
-    function n(e) {
-      e.forEach(function (e) {
-        e.isIntersecting &&
-          !r &&
-          (document.querySelectorAll(".progress-bar").forEach(function (e) {
-            var t = e.querySelector(".progress-fill"),
-              r = e.querySelector(".progress-text");
-            (t.style.width = e.getAttribute("data-progress") + "%"),
-              (r.textContent = e.getAttribute("data-progress") + "%");
-          }),
-          (r = !0));
-      });
-    }
-    window.addEventListener("scroll", function o() {
-      e.getBoundingClientRect().top < t &&
-        !r &&
-        new IntersectionObserver(n, {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0
-        }).observe(e);
-    });
-  });
-}
+// if (typeof RocketLoader === "undefined") {
+//   window.addEventListener("DOMContentLoaded", function () {
+//     var e = document.querySelector(".skills");
+//     e.getBoundingClientRect().top;
+//     var t = window.innerHeight,
+//       r = !1;
+//     function n(e) {
+//       e.forEach(function (e) {
+//         e.isIntersecting &&
+//           /!r &&
+//           (document.querySelectorAll(".progress-bar").forEach(function (e) {
+//             var t = e.querySelector(".progress-fill"),
+//               r = e.querySelector(".progress-text");
+//             (t.style.width = e.getAttribute("data-progress") + "%"),
+//               (r.textContent = e.getAttribute("data-progress") + "%");
+//           }),
+//           (r = !0));
+//       });
+//     }
+//     window.addEventListener("scroll", function o() {
+//       e.getBoundingClientRect().top < t &&
+//         /!r &&
+//         new IntersectionObserver(n, {
+//           root: null,
+//           rootMargin: "0px",
+//           threshold: 0
+//         }).observe(e);
+//     });
+//   });
+// }
 
 /******************************End Skills****************************** */
 /******************************Portfolio****************************** */
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".button").forEach(function (e) {
-    e.addEventListener("click", function () {
-      this.classList.add("active"),
-        Array.from(this.parentNode.children)
-          .filter(function (e) {
-            return e !== this;
-          }, this)
-          .forEach(function (e) {
-            e.classList.remove("active");
-          });
-      var e = this.getAttribute("data-filter");
-      document.querySelectorAll(".gallery .image").forEach(function (t) {
-        "all" === e
-          ? (t.style.display = "block")
-          : t.classList.contains(e)
-          ? (t.style.display = "block")
-          : (t.style.display = "none");
-      });
-    });
-  });
-  var e = document.querySelector(".gallery");
-  e &&
-    e.addEventListener("click", function (e) {
-      var t = e.target;
-      if ("A" === t.tagName) {
-        e.preventDefault();
-        var a = {
-          type: "image",
-          removalDelay: 500,
-          gallery: { enabled: !0 },
-          callbacks: {
-            beforeOpen: function () {
-              (this.st.image.markup = this.st.image.markup.replace(
-                "mfp-figure",
-                "mfp-figure mfp-with-anim"
-              )),
-                (this.st.mainClass = this.st.el.getAttribute("data-effect"));
-            }
-          },
-          closeOnContentClick: !0,
-          midClick: !0
-        };
-        void 0 !== t.dataset.magnificPopup &&
-          Object.assign(a, JSON.parse(t.dataset.magnificPopup)),
-          new MagnificPopup(t, a).open();
-      }
-    });
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.querySelectorAll(".button").forEach(function (e) {
+//     e.addEventListener("click", function () {
+//       this.classList.add("active"),
+//         Array.from(this.parentNode.children)
+//           .filter(function (e) {
+//             return e !== this;
+//           }, this)
+//           .forEach(function (e) {
+//             e.classList.remove("active");
+//           });
+//       var e = this.getAttribute("data-filter");
+//       document.querySelectorAll(".gallery .image").forEach(function (t) {
+//         "all" === e
+//   /        ? (t.style.display = "block")
+//           : t.classList.contains(e)
+//    /       ? (t.style.display = "block")
+//           : (t.style.display = "none");
+//       });
+//     });
+//   });
+//   var e = document.querySelector(".gallery");
+//   e &&
+//     e.addEventListener("click", function (e) {
+//       var t = e.target;
+//       if ("A" === t.tagName) {
+//         e.preventDefault();
+//         var a = {
+//           type: "image",
+//           removalDelay: 500,
+//           gallery: { enabled: !0 },
+//           callbacks: {
+//             beforeOpen: function () {
+//               (this.st.image.markup = this.st.image.markup.replace(
+//                 "mfp-figure",
+//                 "mfp-figure mfp-with-anim"
+//               )),
+//                 (this.st.mainClass = this.st.el.getAttribute("data-effect"));
+//             }
+//           },
+//           closeOnContentClick: !0,
+//           midClick: !0
+//         };
+//         void 0 !== t.dataset.magnificPopup &&
+//           Object.assign(a, JSON.parse(t.dataset.magnificPopup)),
+//           new MagnificPopup(t, a).open();
+//       }
+//     });
+// });
 
 /******************************End Portfolio****************************** */
 /******************************Swiper****************************** */
