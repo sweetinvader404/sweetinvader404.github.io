@@ -138,6 +138,12 @@
   section#contact {
     padding: 1rem 2rem;
   }
+  #contact {
+    min-height: 100vh !important;
+    min-height: max-content;
+    padding-bottom: 2em;
+    overflow: hidden;
+  }
   .contact-wrapper {
     width: 100%;
   }
@@ -219,7 +225,7 @@
   }
   #contact .contact-two-column {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
   }
   .contact-two-column-form {
     margin: 2em 0em;

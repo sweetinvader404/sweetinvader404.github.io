@@ -10,6 +10,7 @@
 #home {
   height: 100vh;
   /* max-width: 100vw; */
+  align-items: center;
 }
 
 .centered-content {

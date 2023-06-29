@@ -1,3 +1,8 @@
+#contact {
+  min-height: 100vh;
+  /* min-height: max-content; */
+  padding-bottom: 2em;
+}
 .contact-item,
 .contact-item2,
 .contact-section,
@@ -52,6 +57,7 @@
 }
 
 /*********************************8Contact******************************/
+
 .contact-column-form {
   max-width: 100%;
   margin: 0 auto;
@@ -73,12 +79,14 @@
 }
 
 .contact-column-form input[type="submit"] {
-  background-color: var(--theme-primary-color);
+  background-color: transparent;
   color: white;
-  border: none;
-  padding: 10px 20px;
+  border: 2px solid var(--theme-primary-color);
+  padding: 10px 60px;
   cursor: pointer;
   float: left;
+  font-family: "Poppins";
+  font-size: 2rem;
 }
 
 .container input[type="submit"]:hover {
@@ -90,7 +98,6 @@
 }
 .contact-column-form input[type="text"] {
   margin: 1em 0em;
-  /* margin-right: 0.5em; */
 }
 .contact-column-form textarea {
   min-height: 16em;

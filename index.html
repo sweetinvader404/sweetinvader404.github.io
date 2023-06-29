@@ -1147,6 +1147,7 @@
           </div>
         </div>
       </div>
+
       <div class="contact-wrapper-form">
         <div class="contact-two-column-form">
           <div class="contact-service-icon">
@@ -1156,7 +1157,6 @@
             <h2>Your message</h2>
             <form action="submit-form.php" method="POST">
               <div class="name-email">
-                <!-- <label for="name">Name</label> -->
                 <input
                   type="text"
                   id="name"
@@ -1164,8 +1164,9 @@
                   placeholder="Your name"
                   required
                 />
+              </div>
 
-                <!-- <label for="email">Email</label> -->
+              <div class="name-email">
                 <input
                   type="text"
                   id="email"
@@ -1175,7 +1176,6 @@
                 />
               </div>
 
-              <!-- <label for="message">Message</label> -->
               <div class="write-message">
                 <textarea
                   id="message"
@@ -1184,12 +1184,14 @@
                   required
                 ></textarea>
               </div>
+
               <input type="submit" value="Submit" />
             </form>
           </div>
         </div>
       </div>
     </section>
+
     <!-------------------- Contact Area (End) -------------------->
     <div id="fb-root"></div>
 
