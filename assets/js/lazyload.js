@@ -37,6 +37,7 @@ const handleScroll = () => {
   const services = document.getElementById("services");
   const testimonial = document.getElementById("testimonial");
   const blog = document.getElementById("blog");
+  const contact = document.getElementById("contact");
   // if (
   //   home &&
   //   isSectionNearViewportBottom(home) &&
@@ -65,7 +66,7 @@ const handleScroll = () => {
   ) {
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/combine.css");
+    lazyLoadCSS("assets/css/about.css");
     about.classList.add("lazy-loaded");
   }
 
@@ -76,8 +77,8 @@ const handleScroll = () => {
   ) {
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadJS("assets/js/combine.js");
-    lazyLoadCSS("assets/css/combine.css");
+    // lazyLoadJS("assets/js/combine.js");
+    lazyLoadCSS("assets/css/skills.css");
 
     skills.classList.add("lazy-loaded");
   }
@@ -86,11 +87,11 @@ const handleScroll = () => {
     isSectionNearViewportBottom(portfolio) &&
     !portfolio.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
+    lazyLoadCSS("assets/css/portfolio.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
 
-    lazyLoadJS("assets/js/combine.js");
+    lazyLoadJS("assets/js/portfolio.js");
 
     portfolio.classList.add("lazy-loaded");
   }
@@ -99,7 +100,7 @@ const handleScroll = () => {
     isSectionNearViewportBottom(qualifications) &&
     !qualifications.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
+    lazyLoadCSS("assets/css/qualifications.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
 
@@ -110,7 +111,7 @@ const handleScroll = () => {
     isSectionNearViewportBottom(services) &&
     services.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
+    // lazyLoadCSS("assets/css/services.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
 
@@ -121,12 +122,12 @@ const handleScroll = () => {
     isSectionNearViewportBottom(testimonial) &&
     !testimonial.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
+    lazyLoadCSS("assets/css/testimonials.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
 
-    lazyLoadJS("assets/js/swiper.js");
-    lazyLoadJS("assets/js/combine.js");
+    // lazyLoadJS("assets/js/swiper.js");
+    lazyLoadJS("assets/js/testimonials.js");
     testimonial.classList.add("lazy-loaded");
   }
   if (
@@ -134,12 +135,29 @@ const handleScroll = () => {
     isSectionNearViewportBottom(blog) &&
     !blog.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
+    lazyLoadCSS("assets/css/blog.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
 
-    lazyLoadJS("assets/js/combine.js");
+    lazyLoadJS("assets/js/blog.js");
     blog.classList.add("lazy-loaded");
+  }
+  if (
+    contact &&
+    isSectionNearViewportBottom(contact) &&
+    !contact.classList.contains("lazy-loaded")
+  ) {
+    // lazyLoadCSS(
+    //   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"
+    // );
+    lazyLoadCSS("assets/css/contact.css");
+    lazyLoadCSS("assets/css/style.css");
+    lazyLoadCSS("assets/css/responsive.css");
+
+    // lazyLoadJS(
+    //   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"
+    // );
+    contact.classList.add("lazy-loaded");
   }
 };
 
