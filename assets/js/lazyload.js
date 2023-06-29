@@ -3,7 +3,7 @@ const isSectionNearViewportBottom = section => {
   const rect = section.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  return (rect.top = viewportHeight - 10);
+  return rect.top <= viewportHeight + 300;
 };
 
 // Lazy load JavaScript file
@@ -28,6 +28,7 @@ const lazyLoadCSS = href => {
 
 // Check if each section is near the bottom of the viewport and lazy load corresponding files
 const handleScroll = () => {
+  const home = document.getElementById("home");
   const personality = document.getElementById("personality");
   const about = document.getElementById("about");
   const skills = document.getElementById("skills");
@@ -36,6 +37,17 @@ const handleScroll = () => {
   const services = document.getElementById("services");
   const testimonial = document.getElementById("testimonial");
   const blog = document.getElementById("blog");
+  if (
+    home &&
+    isSectionNearViewportBottom(home) &&
+    !home.classList.contains("lazy-loaded")
+  ) {
+    lazyLoadCSS("assets/css/style.css");
+    lazyLoadCSS("assets/css/responsive.css");
+    lazyLoadCSS("assets/css/home.css");
+
+    home.classList.add("lazy-loaded");
+  }
   if (
     personality &&
     isSectionNearViewportBottom(personality) &&
