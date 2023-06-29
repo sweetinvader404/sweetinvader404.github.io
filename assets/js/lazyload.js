@@ -63,10 +63,9 @@ const handleScroll = () => {
     isSectionNearViewportBottom(about) &&
     !about.classList.contains("lazy-loaded")
   ) {
-    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-
+    lazyLoadCSS("assets/css/combine.css");
     about.classList.add("lazy-loaded");
   }
 
