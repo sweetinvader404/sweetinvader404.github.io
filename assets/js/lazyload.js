@@ -3,7 +3,7 @@ const isSectionNearViewportBottom = section => {
   const rect = section.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  return rect.top <= viewportHeight + 300;
+  return rect.top <= viewportHeight + 250;
 };
 
 // Lazy load JavaScript file
@@ -42,9 +42,9 @@ const handleScroll = () => {
     isSectionNearViewportBottom(home) &&
     !home.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/home.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/home.css");
 
     home.classList.add("lazy-loaded");
   }
@@ -53,9 +53,9 @@ const handleScroll = () => {
     isSectionNearViewportBottom(personality) &&
     !personality.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/personalities.css");
     personality.classList.add("lazy-loaded");
   }
   if (
@@ -63,9 +63,10 @@ const handleScroll = () => {
     isSectionNearViewportBottom(about) &&
     !about.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/about.css");
+
     about.classList.add("lazy-loaded");
   }
 
@@ -76,8 +77,9 @@ const handleScroll = () => {
   ) {
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/skills.css");
-    lazyLoadJS("assets/js/skills.js");
+    lazyLoadJS("assets/js/combine.js");
+    lazyLoadCSS("assets/css/combine.css");
+
     skills.classList.add("lazy-loaded");
   }
   if (
@@ -85,10 +87,11 @@ const handleScroll = () => {
     isSectionNearViewportBottom(portfolio) &&
     !portfolio.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/portfolio.css");
-    lazyLoadJS("assets/js/portfolio.js");
+
+    lazyLoadJS("assets/js/combine.js");
 
     portfolio.classList.add("lazy-loaded");
   }
@@ -97,9 +100,10 @@ const handleScroll = () => {
     isSectionNearViewportBottom(qualifications) &&
     !qualifications.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/qualifications.css");
+
     qualifications.classList.add("lazy-loaded");
   }
   if (
@@ -107,9 +111,10 @@ const handleScroll = () => {
     isSectionNearViewportBottom(services) &&
     services.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/services.css");
+
     services.classList.add("lazy-loaded");
   }
   if (
@@ -117,12 +122,12 @@ const handleScroll = () => {
     isSectionNearViewportBottom(testimonial) &&
     !testimonial.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/swiper.css");
-    lazyLoadCSS("assets/css/testimonials.css");
+
     lazyLoadJS("assets/js/swiper.js");
-    lazyLoadJS("assets/js/testimonials.js");
+    lazyLoadJS("assets/js/combine.js");
     testimonial.classList.add("lazy-loaded");
   }
   if (
@@ -130,12 +135,11 @@ const handleScroll = () => {
     isSectionNearViewportBottom(blog) &&
     !blog.classList.contains("lazy-loaded")
   ) {
+    lazyLoadCSS("assets/css/combine.css");
     lazyLoadCSS("assets/css/style.css");
     lazyLoadCSS("assets/css/responsive.css");
-    lazyLoadCSS("assets/css/swiper.css");
-    lazyLoadCSS("assets/css/blog.css");
-    lazyLoadJS("assets/js/swiper.js");
-    lazyLoadJS("assets/js/blog.js");
+
+    lazyLoadJS("assets/js/combine.js");
     blog.classList.add("lazy-loaded");
   }
 };
