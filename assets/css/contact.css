@@ -30,25 +30,78 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
-  min-width: 80px;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
   background-color: #44cbe1;
   border-radius: 50%;
   margin-right: 2em;
 }
-.contact-two-column-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .contact-service-icon {
   width: 50%;
+  text-align: center;
 }
 .contact-column-form {
   width: 50%;
+  text-align: center;
 }
 #map {
   height: 400px;
   width: 100%;
+}
+
+/*********************************8Contact******************************/
+.contact-column-form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.contact-column-form h2 {
+  text-align: center;
+}
+
+.contact-column-form input[type="text"],
+.contact-column-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.contact-column-form input[type="submit"] {
+  background-color: var(--theme-primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: left;
+}
+
+.container input[type="submit"]:hover {
+  background-color: #222;
+}
+.name-email,
+.write-message {
+  display: flex;
+}
+.contact-column-form input[type="text"] {
+  margin: 1em 0em;
+  /* margin-right: 0.5em; */
+}
+.contact-column-form textarea {
+  min-height: 16em;
+}
+input,
+textarea {
+  background-color: #2222;
+}
+.contact-column-form h2 {
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1rem;
 }

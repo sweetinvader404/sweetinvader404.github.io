@@ -102,7 +102,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <noscript>
       <link rel="stylesheet" href="assets/css/main-nav.css" />
       <link rel="stylesheet" href="assets/css/home.css" />
@@ -118,7 +123,10 @@
       <link rel="stylesheet" href="assets/css/contact.css" />
       <link rel="stylesheet" href="assets/css/style.css" />
       <link rel="stylesheet" href="assets/css/responsive.css" />
-
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"
+      />
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -154,7 +162,10 @@
     <script src="assets/js/worker.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/lazyload.js" defer></script>
-    <script src="https://www.openlayers.org/api/OpenLayers.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"
+      defer
+    ></script>
     <script src="assets/js/map.js" defer></script>
 
     <script
@@ -1142,11 +1153,39 @@
             <div id="map"></div>
           </div>
           <div class="contact-column-form">
-            <p>
-              <strong><span class="key">Phone</span></strong>
-              <br />
-              <span class="description">+639360774699</span>
-            </p>
+            <h2>Your message</h2>
+            <form action="submit-form.php" method="POST">
+              <div class="name-email">
+                <!-- <label for="name">Name</label> -->
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+
+                <!-- <label for="email">Email</label> -->
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+
+              <!-- <label for="message">Message</label> -->
+              <div class="write-message">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Write your message"
+                  required
+                ></textarea>
+              </div>
+              <input type="submit" value="Submit" />
+            </form>
           </div>
         </div>
       </div>

@@ -1,22 +1,15 @@
 function initMap() {
-  var latitude = YOUR_LATITUDE;
-  var longitude = YOUR_LONGITUDE;
+  var latitude = 17.5911091;
+  var longitude = 120.4328791;
 
-  var map = new OpenLayers.Map("map");
-  var mapnik = new OpenLayers.Layer.OSM();
+  var map = L.map("map").setView([latitude, longitude], 13);
 
-  var lonLat = new OpenLayers.LonLat(longitude, latitude).transform(
-    new OpenLayers.Projection("EPSG:4326"),
-    map.getProjectionObject()
-  );
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors",
+    maxZoom: 18
+  }).addTo(map);
 
-  var markers = new OpenLayers.Layer.Markers("Markers");
-  markers.addMarker(new OpenLayers.Marker(lonLat));
-
-  map.addLayer(mapnik);
-  map.addLayer(markers);
-
-  map.setCenter(lonLat, 15);
+  L.marker([latitude, longitude]).addTo(map);
 }
 
 initMap();

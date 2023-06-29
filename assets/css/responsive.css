@@ -135,6 +135,9 @@
   }
 
   /************Contact Section************/
+  section#contact {
+    padding: 1rem 2rem;
+  }
   .contact-wrapper {
     width: 100%;
   }
@@ -146,6 +149,18 @@
   .contact-two-column .contact-service-icon {
     margin-right: 4.5em;
     margin-left: 3em;
+  }
+  .contact-service-icon {
+    width: 100%;
+    text-align: center;
+  }
+  .contact-column-form {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .contact-two-column-form {
+    display: block;
   }
 }
 @media (min-width: 768px) {
@@ -205,5 +220,14 @@
   #contact .contact-two-column {
     display: flex;
     /* justify-content: center; */
+  }
+  .contact-two-column-form {
+    margin: 2em 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section#contact {
+    padding: 1em 13em;
   }
 }
