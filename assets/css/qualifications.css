@@ -1,1 +1,77 @@
-:root{--black:#000000;--white:#ffffff;--grey:#dfdfde;--margin:20px;--theme-primary-color:#44cbe1;--theme-background-color-main:#222222;--neural-background-color:#2e313e}*{transition:.2s linear}#qualifications{background-color:#333}.qualification .box-container,.skill-item .box h3,.skills{display:flex;justify-content:center;align-items:center}.qualification .box-container{flex-wrap:wrap;gap:4rem}.education,.experience{flex:1 1 40rem}.experience-item{position:relative;flex:1 1 40rem;padding:0 3rem 2rem;border-left:.2rem solid var(--theme-primary-color);margin-left:2rem}.controls,.service .box-container{display:flex;justify-content:center}.experience-item i{position:absolute;top:0;left:-2.5rem;height:5rem;width:5rem;border-radius:50%;line-height:5rem;text-align:center;font-size:2rem;color:var(--white);background:var(--theme-primary-color)}.experience-item .content{border-radius:.5rem;padding:1rem 2rem;border-left:2rem}.experience-item span{background:#1e7f8e;color:#fff;padding:.5rem 1.5rem;font-size:2rem;border-radius:50rem;font-weight:700}.experience-item h3{color:var(--white);padding:2rem 0;line-height:3rem}.experience-item p{color:#fff;line-height:2.5rem}
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #dfdfde;
+  --margin: 20px;
+  --theme-primary-color: #44cbe1;
+  --theme-background-color-main: #222222;
+  --neural-background-color: #2e313e;
+}
+* {
+  transition: 0.2s linear;
+}
+#qualifications {
+  background-color: #333;
+}
+.qualification .box-container,
+.skill-item .box h3,
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qualification .box-container {
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.education,
+.experience {
+  flex: 1 1 40rem;
+}
+.experience-item {
+  position: relative;
+  flex: 1 1 40rem;
+  padding: 0 3rem 2rem;
+  border-left: 0.2rem solid var(--theme-primary-color);
+  margin-left: 2rem;
+}
+.controls,
+.service .box-container {
+  display: flex;
+  justify-content: center;
+}
+.experience-item i {
+  position: absolute;
+  top: 0;
+  left: -2.5rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  line-height: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--white);
+  background: var(--theme-primary-color);
+}
+.experience-item .content {
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  border-left: 2rem;
+}
+.experience-item span {
+  background: #1e7f8e;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  font-size: 2rem;
+  border-radius: 50rem;
+  font-weight: 700;
+}
+.experience-item h3 {
+  color: var(--white);
+  padding: 2rem 0;
+  line-height: 3rem;
+}
+.experience-item p {
+  color: #fff;
+  line-height: 2.5rem;
+}
