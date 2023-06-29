@@ -115,6 +115,11 @@ button {
   background-color: #17698c;
 }
 #about,
+/* #contact, */
+#contact .brief-description,
+#contact .icon-box,
+#contact .contact-item,
+#contact .three-column,
 #about .about-section,
 #about .image-column,
 #about .two-column,
@@ -129,6 +134,10 @@ button {
 #about,
 #about .content-column,
 #about .image-column,
+/* #contact, */
+#contact .brief-description,
+#contact .icon-box,
+#contact .three-column,
 #home,
 #personality,
 #personality .brief-description,
@@ -140,7 +149,10 @@ button {
 #about,
 #about .content-column,
 #about .image-column,
-#home,
+#contact,
+#contact .brief-description,
+#contact .icon-box,
+#contact .three-column #home,
 #personality,
 #personality .brief-description,
 #personality .icon-box,

@@ -133,6 +133,20 @@
   .blog-item p {
     padding: 1rem;
   }
+
+  /************Contact Section************/
+  .contact-wrapper {
+    width: 100%;
+  }
+  #contact .contact-two-column {
+    margin: 2rem 0;
+    justify-content: left;
+    padding: 0.1em 0em;
+  }
+  .contact-two-column .contact-service-icon {
+    margin-right: 4.5em;
+    margin-left: 3em;
+  }
 }
 @media (min-width: 768px) {
   .service-item {
@@ -179,5 +193,17 @@
   }
   .services-wrapper {
     margin-top: 6rem;
+  }
+
+  /****************Contact Section****************/
+  .contact-three-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  #contact .contact-two-column {
+    display: flex;
+    /* justify-content: center; */
   }
 }

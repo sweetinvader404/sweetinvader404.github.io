@@ -76,6 +76,12 @@
       href="assets/css/blog.css"
       onload="this.onload=null;this.rel='stylesheet'"
     /> -->
+    <link
+      rel="preload"
+      as="style"
+      href="assets/css/contact.css"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
 
     <link
       rel="preload"
@@ -109,7 +115,7 @@
       <link rel="stylesheet" href="assets/css/swiper.css" />
       <link rel="stylesheet" href="assets/css/testimonials.css" />
       <link rel="stylesheet" href="assets/css/blog.css" />
-      <!-- <link rel="stylesheet" href="assets/css/contact.css" /> -->
+      <link rel="stylesheet" href="assets/css/contact.css" />
       <link rel="stylesheet" href="assets/css/style.css" />
       <link rel="stylesheet" href="assets/css/responsive.css" />
 
@@ -148,6 +154,8 @@
     <script src="assets/js/worker.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/lazyload.js" defer></script>
+    <script src="https://www.openlayers.org/api/OpenLayers.js" defer></script>
+    <script src="assets/js/map.js" defer></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"
@@ -1071,103 +1079,78 @@
     </section>
     <!-------------------- Blog Area (End) -------------------->
     <!-------------------- Contact Area (Start) -------------------->
-    <!-- <section class="section contact" id="contact">
-      <div class="title-wrapper">
-        <h2>CONTACT ME</h2>
+    <section class="contact-section lazy-section" id="contact">
+      <div class="brief-description">
+        <div class="title-wrapper">
+          <h2 class="title">GET IN TOUCH</h2>
+        </div>
+        <div class="description-wrapper">
+          <p class="description">
+            As a skilled web developer, I'm a tech enthusiast and risk-taking
+            entrepreneur from the Philippines.
+          </p>
+        </div>
       </div>
 
-      <div class="box-container">
-        <div class="contact-info">
-          <h3>Get in touch</h3>
-
-          <p>You can contact me on my phone number or my email.</p>
-
-          <div class="info-item">
-            <h4>Phone:</h4>
-            <div class="detail">
-              <div class="fas fa-phone"></div>
-              <p class="telephone">
-                <a href="tel:+639360774699">+639360774699</a>
-              </p>
+      <div class="contact-three-column">
+        <div class="contact-wrapper">
+          <div class="contact-two-column">
+            <div class="contact-service-icon">
+              <i class="fas fa-chart-line fa-3x"></i>
             </div>
-          </div>
-
-          <div class="info-item">
-            <h4>email:</h4>
-            <div class="detail">
-              <div class="fas fa-envelope"></div>
-              <p class="gmail">
-                <a href="mailto:sweetinvader404@gmail.com"
-                  >sweetinvader404@gmail.com</a
-                >
-              </p>
-            </div>
-          </div>
-          <div class="info-item">
-            <h4>linkedin:</h4>
-            <div class="detail">
-              <div class="fab fa-linkedin"></div>
-              <p class="linkedin">
-                <a href="https://www.linkedin.com/in/jay-ar-collantes-82ba2912a"
-                  >https://www.linkedin.com/in/jay-ar-collantes-82ba2912a</a
-                >
-              </p>
-            </div>
-          </div>
-          <div class="info-item">
-            <h4>Onlinejobs:</h4>
-            <div class="detail">
-              <div class="fas fa-building"></div>
-              <p class="onlinejobs">
-                <a href="https://www.onlinejobs.ph/jobseekers/info/322894"
-                  >https://www.onlinejobs.ph/jobseekers/info/322894</a
-                >
+            <div class="contact-column">
+              <p>
+                <strong><span class="key">Address</span></strong>
+                <br />
+                <span class="description">Bulag East, Bantay, Ilocos Sur</span>
               </p>
             </div>
           </div>
         </div>
-
-        <form method="post" class="contact-form" id="contactUs-Form">
-          <input
-            type="text"
-            name="name"
-            class="box"
-            id="name"
-            placeholder="name"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            class="box"
-            id="email"
-            placeholder="email"
-            required
-          />
-          <input
-            type="text"
-            name="subject"
-            class="box"
-            id="subject"
-            placeholder="subject"
-            required
-          />
-          <textarea
-            cols="30"
-            rows="10"
-            name="comment"
-            id="comment"
-            class="box"
-            placeholder="message"
-          ></textarea>
-          <button type="submit" class="btn" name="submit" id="submit">
-            send message
-          </button>
-
-          <span class="alert" id="msg"></span>
-        </form>
+        <div class="contact-wrapper">
+          <div class="contact-two-column">
+            <div class="contact-service-icon">
+              <i class="fas fa-chart-line fa-3x"></i>
+            </div>
+            <div class="contact-column">
+              <p>
+                <strong><span class="key">Phone</span></strong>
+                <br />
+                <span class="description">+639360774699</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-two-column">
+            <div class="contact-service-icon">
+              <i class="fas fa-chart-line fa-3x"></i>
+            </div>
+            <div class="contact-column">
+              <p>
+                <strong><span class="key">Email</span></strong>
+                <br />
+                <span class="description">sweetinvader404@gmail.com</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section> -->
+      <div class="contact-wrapper-form">
+        <div class="contact-two-column-form">
+          <div class="contact-service-icon">
+            <div id="map"></div>
+          </div>
+          <div class="contact-column-form">
+            <p>
+              <strong><span class="key">Phone</span></strong>
+              <br />
+              <span class="description">+639360774699</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-------------------- Contact Area (End) -------------------->
     <div id="fb-root"></div>
 
