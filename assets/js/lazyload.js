@@ -3,7 +3,7 @@ const isSectionNearViewportBottom = section => {
   const rect = section.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  return (rect.top = viewportHeight);
+  return rect.top <= viewportHeight;
 };
 
 // Lazy load JavaScript file
@@ -38,20 +38,20 @@ const handleScroll = () => {
   const testimonial = document.getElementById("testimonial");
   const blog = document.getElementById("blog");
   const contact = document.getElementById("contact");
-  // if (
-  //   home &&
-  //   isSectionNearViewportBottom(home) &&
-  //  / !home.classList.contains("lazy-loaded")
-  // ) {
-  //   home.classList.add("lazy-loaded");
-  // }
-  // if (
-  //   personality &&
-  //   isSectionNearViewportBottom(personality) &&
-  //  / !personality.classList.contains("lazy-loaded")
-  // ) {
-  //   personality.classList.add("lazy-loaded");
-  // }
+  if (
+    home &&
+    isSectionNearViewportBottom(home) &&
+    !home.classList.contains("lazy-loaded")
+  ) {
+    home.classList.add("lazy-loaded");
+  }
+  if (
+    personality &&
+    isSectionNearViewportBottom(personality) &&
+    !personality.classList.contains("lazy-loaded")
+  ) {
+    personality.classList.add("lazy-loaded");
+  }
   if (
     about &&
     isSectionNearViewportBottom(about) &&
