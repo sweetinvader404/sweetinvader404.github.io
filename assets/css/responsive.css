@@ -88,7 +88,7 @@
     height: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     border-radius: 6px;
-    /* border: 1px solid #fff; */
+
     opacity: 1;
     transition: background-color 0.3s;
     z-index: -1;
@@ -114,7 +114,6 @@
     grid-template-columns: 1fr;
   }
   .portfolio-item {
-    /*This is to check if pull request is saved*/
     height: 35rem;
     margin: 1rem;
   }
@@ -134,7 +133,6 @@
     padding: 1rem;
   }
 
-  /************Contact Section************/
   section#contact {
     padding: 1rem 2rem;
   }
@@ -216,7 +214,6 @@
     margin-top: 6rem;
   }
 
-  /****************Contact Section****************/
   .contact-three-column {
     display: flex;
     justify-content: center;
