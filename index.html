@@ -192,6 +192,11 @@
       body {
         font-family: "Poppins", sans-serif;
       }
+      @media (max-width: 768px) {
+        .centered-content {
+          height: 500px;
+        }
+      }
       #website-container {
         visibility: visible !important; /* Show the content after fonts are loaded */
       }
@@ -242,7 +247,7 @@
           <a href="#contact">Contact</a>
         </nav>
       </header>
-      <section id="home" style="height: 100vh">
+      <section id="home" style="height: 100vh; width: 100%">
         <div class="canvas-container">
           <canvas id="neural-network"></canvas>
         </div>
