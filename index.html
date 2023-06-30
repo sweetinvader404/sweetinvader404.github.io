@@ -201,15 +201,15 @@
       #website-container {
         visibility: visible !important; /* Show the content after fonts are loaded */
       }
-      /* .profile {
+      .profile {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease;
       }
       .profile.loaded {
-        opacity: 1;
-        visibility: visible;
-      } */
+        opacity: 1 !important;
+        visibility: visible1 !important;
+      }
     </style>
   </head>
   <body>
@@ -258,7 +258,7 @@
         </nav>
       </header>
       <section id="home" style="height: 100vh; width: 100%">
-        <div class="canvas-container">
+        <div style="width: 100%; height: 100vh" class="canvas-container">
           <canvas id="neural-network"></canvas>
         </div>
         <!-- <div class="centered-content">
