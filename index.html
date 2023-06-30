@@ -200,6 +200,15 @@
       #website-container {
         visibility: visible !important; /* Show the content after fonts are loaded */
       }
+      .profile {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+      }
+      .profile.loaded {
+        opacity: 1;
+        visibility: visible;
+      }
     </style>
   </head>
   <body>
@@ -1257,5 +1266,18 @@
       logged_out_greeting="Hello! How can we assist you today?"
     ></div> -->
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageElement = document.querySelector(".rounded-image");
+
+        // Function to handle image load event
+        function handleImageLoad() {
+          imageElement.classList.add("loaded");
+        }
+
+        // Add event listener for the image load event
+        imageElement.addEventListener("load", handleImageLoad);
+      });
+    </script>
   </body>
 </html>
