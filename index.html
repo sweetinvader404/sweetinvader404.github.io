@@ -201,10 +201,10 @@
           padding: 0 !important;
         }
       }
-      #website-container {
-        visibility: visible !important; /* Show the content after fonts are loaded */
-      }
-      .profile {
+      /* #website-container {
+        visibility: visible !important; 
+      } */
+      /* .profile {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease;
@@ -212,7 +212,7 @@
       .profile.loaded {
         opacity: 1 !important;
         visibility: visible1 !important;
-      }
+      } */
     </style>
   </head>
   <body>
@@ -1272,6 +1272,11 @@
       logged_out_greeting="Hello! How can we assist you today?"
     ></div> -->
     </div>
+    <style>
+      #website-container {
+        visibility: visible !important; /* Show the content after fonts are loaded */
+      }
+    </style>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const imageElement = document.querySelector(".rounded-image");
