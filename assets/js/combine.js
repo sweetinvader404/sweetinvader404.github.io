@@ -348,6 +348,13 @@ sections.forEach(e => {
 function loadFacebookSDK() {
   var wrapper = document.getElementById("fb-customerchat-wrapper");
 
+  if (!wrapper) {
+    console.error(
+      "Wrapper element not found. Please make sure the 'fb-customerchat-wrapper' element exists in your HTML."
+    );
+    return;
+  }
+
   // Create a function to load the Facebook SDK script asynchronously
   function loadScript(url, callback) {
     var script = document.createElement("script");
@@ -357,20 +364,23 @@ function loadFacebookSDK() {
     wrapper.appendChild(script);
   }
 
-  // Load the Facebook SDK script asynchronously
-  loadScript(
-    "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
-    function () {
-      // Initialize the Facebook SDK
-      FB.init({
-        // appId: "591873306363263",
-        // autoLogAppEvents: true,
-        xfbml: true,
-        version: "v13.0"
-      });
-      FB.XFBML.parse(wrapper);
-    }
-  );
+  if (typeof FB !== "undefined" && FB !== null) {
+    // FB object is already defined, no need to load the SDK again
+    FB.XFBML.parse(wrapper);
+  } else {
+    // Load the Facebook SDK script asynchronously
+    loadScript(
+      "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
+      function () {
+        // Initialize the Facebook SDK
+        FB.init({
+          xfbml: true,
+          version: "v13.0"
+        });
+        FB.XFBML.parse(wrapper);
+      }
+    );
+  }
 }
 
 function loadFacebookSDKLazy() {
