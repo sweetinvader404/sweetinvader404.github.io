@@ -345,6 +345,56 @@ sections.forEach(e => {
 // })(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
+// function loadFacebookSDK() {
+//   var wrapper = document.getElementById("fb-customerchat-wrapper");
+
+//   if (!wrapper) {
+//     console.error(
+//       "Wrapper element not found. Please make sure the 'fb-customerchat-wrapper' element exists in your HTML."
+//     );
+//     return;
+//   }
+
+//   if (typeof FB !== "undefined" && FB !== null && FB.XFBML && FB.XFBML.parse) {
+
+//     FB.XFBML.parse(wrapper);
+//   } else {
+
+//     function loadScript(url, callback) {
+//       var script = document.createElement("script");
+//       script.src = url;
+//       script.async = true;
+//       script.onload = callback;
+//       wrapper.appendChild(script);
+//     }
+
+//     loadScript(
+//       "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
+//       function () {
+
+//         FB.init({
+//           xfbml: true,
+//           version: "v13.0"
+//         });
+//         FB.XFBML.parse(wrapper);
+//       }
+//     );
+//   }
+// }
+
+// function loadFacebookSDKLazy() {
+//   if (window.requestIdleCallback) {
+//     requestIdleCallback(function () {
+//       loadFacebookSDK();
+//     });
+//   } else {
+//     setTimeout(function () {
+//       loadFacebookSDK();
+//     }, 500);
+//   }
+// }
+
+// window.addEventListener("load", loadFacebookSDKLazy);
 function loadFacebookSDK() {
   var wrapper = document.getElementById("fb-customerchat-wrapper");
 
@@ -378,6 +428,24 @@ function loadFacebookSDK() {
           xfbml: true,
           version: "v13.0"
         });
+
+        // Track whether the chatbox has been rendered
+        var chatboxRendered = false;
+
+        // Handle the xfbml.render event to prevent rendering the chatbox multiple times
+        FB.Event.subscribe("xfbml.render", function () {
+          if (!chatboxRendered) {
+            // The chatbox is rendered for the first time
+            chatboxRendered = true;
+          } else {
+            // The chatbox is already rendered, so we hide it
+            var chatbox = document.getElementsByClassName("fb-customerchat")[0];
+            if (chatbox) {
+              chatbox.style.display = "none";
+            }
+          }
+        });
+
         FB.XFBML.parse(wrapper);
       }
     );
