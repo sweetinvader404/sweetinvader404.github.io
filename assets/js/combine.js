@@ -437,28 +437,18 @@ function loadFacebookSDK() {
 
 function initializeChatbox() {
   if (typeof FB !== "undefined" && FB !== null && FB.CustomerChat) {
-    // Check if the chatbox has already been initialized
+    // Check if the chatbox has already been initialized and shown
     if (!window.chatboxInitialized) {
       // Initialize the chatbox
-      FB.CustomerChat.hideDialog();
-
-      // Check if the chatbox is minimized
-      if (!window.chatboxMinimized) {
-        FB.CustomerChat.showDialog();
-      }
-
+      FB.CustomerChat.showDialog();
       window.chatboxInitialized = true;
+      window.chatboxShown = true;
+    } else if (!window.chatboxShown) {
+      // Show the chatbox if it has been initialized but not shown
+      FB.CustomerChat.showDialog();
+      window.chatboxShown = true;
     }
   }
-}
-
-function minimizeChatbox() {
-  window.chatboxMinimized = true;
-}
-
-function restoreChatbox() {
-  window.chatboxMinimized = false;
-  initializeChatbox();
 }
 
 function loadFacebookSDKLazy() {
@@ -475,10 +465,6 @@ function loadFacebookSDKLazy() {
 
 // Trigger the lazy loading of the Facebook SDK when the window finishes loading
 window.addEventListener("load", loadFacebookSDKLazy);
-
-// Attach event listeners to minimize and restore the chatbox
-window.addEventListener("blur", minimizeChatbox);
-window.addEventListener("focus", restoreChatbox);
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
 
