@@ -363,8 +363,8 @@ function loadFacebookSDK() {
     function () {
       // Initialize the Facebook SDK
       FB.init({
-        appId: "591873306363263",
-        autoLogAppEvents: true,
+        // appId: "591873306363263",
+        // autoLogAppEvents: true,
         xfbml: true,
         version: "v13.0"
       });
