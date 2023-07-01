@@ -304,7 +304,33 @@ window.fbAsyncInit = function () {
 })(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
+/****************Defer facebook messenger******************** */
+function loadFacebookMessengerChat() {
+  // Check if the Facebook SDK is already loaded
+  if (window.FB) {
+    // Initialize the messenger chat
+    window.FB.CustomerChat.showDialog();
+  } else {
+    // Create a script element
+    const script = document.createElement("script");
+    script.defer = true;
+    script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+    script.onload = () => {
+      // Initialize the messenger chat after the script is loaded
+      window.FB.init({
+        xfbml: true,
+        version: "v12.0"
+      });
+      window.FB.CustomerChat.showDialog();
+    };
+    // Append the script element to the document
+    document.body.appendChild(script);
+  }
+}
 
+// Call the function to load the chat widget
+loadFacebookMessengerChat();
+/****************Defer facebook messenger******************** */
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
 
