@@ -355,19 +355,20 @@ function loadFacebookSDK() {
     return;
   }
 
-  // Create a function to load the Facebook SDK script asynchronously
-  function loadScript(url, callback) {
-    var script = document.createElement("script");
-    script.src = url;
-    script.async = true;
-    script.onload = callback;
-    wrapper.appendChild(script);
-  }
-
-  if (typeof FB !== "undefined" && FB !== null) {
-    // FB object is already defined, no need to load the SDK again
+  // Check if the Facebook SDK script has already been loaded
+  if (typeof FB !== "undefined" && FB !== null && FB.XFBML && FB.XFBML.parse) {
+    // The Facebook SDK has already been loaded and initialized
     FB.XFBML.parse(wrapper);
   } else {
+    // Create a function to load the Facebook SDK script asynchronously
+    function loadScript(url, callback) {
+      var script = document.createElement("script");
+      script.src = url;
+      script.async = true;
+      script.onload = callback;
+      wrapper.appendChild(script);
+    }
+
     // Load the Facebook SDK script asynchronously
     loadScript(
       "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
