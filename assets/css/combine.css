@@ -683,6 +683,7 @@ header .navbar a {
 /****************************End services**********************/
 
 /****************************testimonials**********************/
+
 .slideshow-container {
   max-width: 900px;
   position: relative;
@@ -739,31 +740,31 @@ header .navbar a {
   color: #000000;
 }
 .slideshow-container .bg1 {
-  background: #42378f;
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  background: #44cbe1;
+  background-image: url("assets/images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
-    linear-gradient(315deg, #42378f 0%, #f53844 74%);
+  background-image: url("assets/images/Testimonials/pen.png"),
+    linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
 }
 .slideshow-container .bg2 {
-  background: #045de9;
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  background: #44cbe1;
+  background-image: url("assets/images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
-    linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  background-image: url("assets/images/Testimonials/pen.png"),
+    linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
 }
 .slideshow-container .bg3 {
-  background: #7f53ac;
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  background: #44cbe1;
+  background-image: url("assets/images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
-    linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  background-image: url("assets/images/Testimonials/pen.png"),
+    linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
@@ -1358,7 +1359,7 @@ button {
     height: 35rem;
     margin: 1rem;
   }
-  .testimonial .swiper-slide {
+  /* .testimonial .swiper-slide {
     width: 100%;
   }
   .testi-item {
@@ -1369,7 +1370,7 @@ button {
   }
   .testimonial h4 {
     font-size: 1.3rem;
-  }
+  } */
   .blog-item p {
     padding: 1rem;
   }
@@ -1444,13 +1445,13 @@ button {
   .service-wrapper {
     margin: 4em 1em;
   }
-  .testi-item {
+  /* .testi-item {
     min-height: 350px;
     max-height: 350px;
   }
   .testimonial h4 {
     font-size: 1.3rem;
-  }
+  } */
   .services-wrapper {
     margin-top: 6rem;
   }

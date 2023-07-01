@@ -126,31 +126,31 @@
   color: #000000;
 }
 .slideshow-container .bg1 {
-  background: #42378f;
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  background: #44cbe1;
+  background-image: url("assets/images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
-    linear-gradient(315deg, #42378f 0%, #f53844 74%);
+  background-image: url("assets/images/Testimonials/pen.png"),
+    linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
 }
 .slideshow-container .bg2 {
-  background: #045de9;
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  background: #44cbe1;
+  background-image: url("assets/images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
-    linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  background-image: url("assets/images/Testimonials/pen.png"),
+    linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
 }
 .slideshow-container .bg3 {
-  background: #7f53ac;
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  background: #44cbe1;
+  background-image: url("assets/images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
-    linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  background-image: url("assets/images/Testimonials/pen.png"),
+    linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
