@@ -408,7 +408,7 @@ function loadFacebookSDK() {
   // Check if the Facebook SDK script has already been loaded
   if (typeof FB !== "undefined" && FB !== null && FB.XFBML && FB.XFBML.parse) {
     // The Facebook SDK has already been loaded and initialized
-    FB.XFBML.parse(wrapper);
+    initializeChatbox();
   } else {
     // Create a function to load the Facebook SDK script asynchronously
     function loadScript(url, callback) {
@@ -429,26 +429,21 @@ function loadFacebookSDK() {
           version: "v13.0"
         });
 
-        // Track whether the chatbox has been rendered
-        var chatboxRendered = false;
-
-        // Handle the xfbml.render event to prevent rendering the chatbox multiple times
-        FB.Event.subscribe("xfbml.render", function () {
-          if (!chatboxRendered) {
-            // The chatbox is rendered for the first time
-            chatboxRendered = true;
-          } else {
-            // The chatbox is already rendered, so we hide it
-            var chatbox = document.getElementsByClassName("fb-customerchat")[0];
-            if (chatbox) {
-              chatbox.style.display = "none";
-            }
-          }
-        });
-
-        FB.XFBML.parse(wrapper);
+        initializeChatbox();
       }
     );
+  }
+}
+
+function initializeChatbox() {
+  if (typeof FB !== "undefined" && FB !== null && FB.CustomerChat) {
+    // Check if the chatbox has already been initialized
+    if (!window.chatboxInitialized) {
+      // Initialize the chatbox
+      FB.CustomerChat.hideDialog();
+      FB.CustomerChat.showDialog();
+      window.chatboxInitialized = true;
+    }
   }
 }
 
