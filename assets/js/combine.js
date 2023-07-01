@@ -316,12 +316,14 @@ function loadFacebookMessengerChat() {
     script.defer = true;
     script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
     script.onload = () => {
-      // Initialize the messenger chat after the script is loaded
-      window.FB.init({
-        xfbml: true,
-        version: "v12.0"
-      });
-      window.FB.CustomerChat.showDialog();
+      // Initialize the messenger chat after a delay to defer execution
+      setTimeout(() => {
+        window.FB.init({
+          xfbml: true,
+          version: "v12.0"
+        });
+        window.FB.CustomerChat.showDialog();
+      }, 0);
     };
     // Append the script element to the document
     document.body.appendChild(script);
