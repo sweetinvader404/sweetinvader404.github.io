@@ -283,49 +283,47 @@ sections.forEach(e => {
   window.addEventListener("scroll", updateNavigationStyle),
   updateNavigationStyle();
 /****************Defer facebook messenger******************** */
-function loadFacebookMessengerChat() {
-  // Check if the function has already been called
-  if (window.loadFacebookMessengerChat.loaded) return;
-  window.loadFacebookMessengerChat.loaded = true;
+// function loadFacebookMessengerChat() {
 
-  // Create a script element
-  const script = document.createElement("script");
-  script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-  script.defer = true;
-  script.onload = () => {
-    // Initialize the messenger chat
-    window.FB.init({
-      xfbml: true,
-      version: "v12.0"
-    });
-    window.FB.CustomerChat.showDialog();
-  };
-  // Append the script element to the document
-  document.body.appendChild(script);
-}
+//   if (window.loadFacebookMessengerChat.loaded) return;
+//   window.loadFacebookMessengerChat.loaded = true;
 
-// Load the chat when the page finishes loading
-window.addEventListener("load", loadFacebookMessengerChat);
+//   const script = document.createElement("script");
+//   script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+//   script.defer = true;
+//   script.onload = () => {
+
+//     window.FB.init({
+//       xfbml: true,
+//       version: "v12.0"
+//     });
+//     window.FB.CustomerChat.showDialog();
+//   };
+
+//   document.body.appendChild(script);
+// }
+
+// window.addEventListener("load", loadFacebookMessengerChat);
 /****************Defer facebook messenger******************** */
 /****************Official FACEBOOK SDK****************** */
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: "591873306363263",
-    autoLogAppEvents: true,
-    xfbml: true,
-    version: "v13.0"
-  });
-};
+// window.fbAsyncInit = function () {
+//   FB.init({
+//     appId: "591873306363263",
+//     autoLogAppEvents: true,
+//     xfbml: true,
+//     version: "v13.0"
+//   });
+// };
 
-(function (d, s, id) {
-  var js,
-    fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-  fjs.parentNode.insertBefore(js, fjs);
-})(document, "script", "facebook-jssdk");
+// (function (d, s, id) {
+//   var js,
+//     fjs = d.getElementsByTagName(s)[0];
+//   if (d.getElementById(id)) return;
+//   js = d.createElement(s);
+//   js.id = id;
+//   js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+//   fjs.parentNode.insertBefore(js, fjs);
+// })(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
 
