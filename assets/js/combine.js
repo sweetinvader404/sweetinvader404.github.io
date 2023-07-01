@@ -379,18 +379,6 @@ function loadFacebookSDK() {
           version: "v13.0"
         });
         FB.XFBML.parse(wrapper);
-
-        // Handle the xfbml.render event to prevent rendering the chatbox multiple times
-        FB.Event.subscribe("xfbml.render", function () {
-          var chatbox = document.getElementsByClassName("fb-customerchat")[0];
-          if (
-            chatbox &&
-            chatbox.getAttribute("fb-xfbml-state") === "rendered"
-          ) {
-            // The chatbox is already rendered, so we hide it
-            chatbox.style.display = "none";
-          }
-        });
       }
     );
   }
