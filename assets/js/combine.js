@@ -306,32 +306,28 @@ window.fbAsyncInit = function () {
 /****************end Official FACEBOOK SDK****************** */
 /****************Defer facebook messenger******************** */
 function loadFacebookMessengerChat() {
-  // Check if the Facebook SDK is already loaded
-  if (window.FB) {
+  // Check if the function has already been called
+  if (window.loadFacebookMessengerChat.loaded) return;
+  window.loadFacebookMessengerChat.loaded = true;
+
+  // Create a script element
+  const script = document.createElement("script");
+  script.defer = true;
+  script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+  script.onload = () => {
     // Initialize the messenger chat
+    window.FB.init({
+      xfbml: true,
+      version: "v12.0"
+    });
     window.FB.CustomerChat.showDialog();
-  } else {
-    // Create a script element
-    const script = document.createElement("script");
-    script.defer = true;
-    script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-    script.onload = () => {
-      // Initialize the messenger chat after a delay to defer execution
-      setTimeout(() => {
-        window.FB.init({
-          xfbml: true,
-          version: "v12.0"
-        });
-        window.FB.CustomerChat.showDialog();
-      }, 0);
-    };
-    // Append the script element to the document
-    document.body.appendChild(script);
-  }
+  };
+  // Append the script element to the document
+  document.body.appendChild(script);
 }
 
-// Call the function to load the chat widget
-loadFacebookMessengerChat();
+// Load the Facebook Messenger Chat when the page finishes loading
+window.addEventListener("load", loadFacebookMessengerChat);
 /****************Defer facebook messenger******************** */
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
