@@ -42,6 +42,7 @@
     ></script>
     <script src="assets/js/combine.min.js" defer></script>
     <script src="assets/js/worker.js" defer></script>
+    <script src="assets/js/map.js" defer></script>
     <style>
       /* This CSS will be applied once the font is loaded */
 
@@ -1076,6 +1077,7 @@
               >
                 <div class="name-email">
                   <input
+                    style="color: #ffffff; font-size: 1.5rem"
                     type="text"
                     id="name"
                     name="name"
@@ -1086,6 +1088,7 @@
 
                 <div class="name-email">
                   <input
+                    style="color: #ffffff; font-size: 1.5rem"
                     type="text"
                     id="email"
                     name="email"
@@ -1096,6 +1099,7 @@
 
                 <div class="write-message">
                   <textarea
+                    style="color: #ffffff; font-size: 1.5rem"
                     id="message"
                     name="message"
                     placeholder="Write your message"
@@ -1129,6 +1133,14 @@
     <style>
       #website-container {
         visibility: visible !important; /* Show the content after fonts are loaded */
+      }
+      input::placeholder,
+      textarea::placeholder {
+        /* CSS styles for the placeholder text */
+        color: #ffffff;
+        font-family: poppins;
+        font-weight: bold;
+        font-size: 1.5rem;
       }
     </style>
     <script>
