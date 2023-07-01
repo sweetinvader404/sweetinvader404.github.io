@@ -1129,14 +1129,14 @@
 
       <div class="fb-customerchat" id="fb-customerchat-wrapper"></div>
 
-      <!-- <div
+      <div
         class="fb-customerchat"
         attribution="setup_tool"
         page_id="113810161758805"
         theme_color="#084E8A"
         logged_in_greeting="Hello! How can we assist you today?"
         logged_out_greeting="Hello! How can we assist you today?"
-      ></div> -->
+      ></div>
     </div>
     <style>
       #website-container {
@@ -1165,49 +1165,24 @@
       });
     </script>
     <script>
-      function loadFacebookChat() {
-        var wrapper = document.getElementById("fb-customerchat-wrapper");
-        var script = document.createElement("script");
-        script.innerHTML = `
-    function initializeChat() {
-      FB.init({
-        appId: "591873306363263",
-        autoLogAppEvents: true,
-        xfbml: true,
-        version: "v13.0"
-      });
-      FB.CustomerChat.showDialog();
-    }
-    window.addEventListener("load", initializeChat);
-  `;
-        wrapper.appendChild(script);
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "591873306363263",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v13.0"
+        });
+      };
 
-        (function (d, s, id) {
-          var js,
-            fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src =
-            "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        })(document, "script", "facebook-jssdk");
-      }
-
-      function loadFacebookChatLazy() {
-        if (window.requestIdleCallback) {
-          requestIdleCallback(function () {
-            loadFacebookChat();
-          });
-        } else {
-          setTimeout(function () {
-            loadFacebookChat();
-          }, 500);
-        }
-      }
-
-      // Trigger the lazy loading of the Facebook chat plugin when the window finishes loading
-      window.addEventListener("load", loadFacebookChatLazy);
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
     </script>
   </body>
 </html>
