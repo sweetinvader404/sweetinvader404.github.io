@@ -345,6 +345,48 @@ sections.forEach(e => {
 // })(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
+function loadFacebookSDK() {
+  var wrapper = document.getElementById("fb-customerchat-wrapper");
+
+  // Create a function to load the Facebook SDK script asynchronously
+  function loadScript(url, callback) {
+    var script = document.createElement("script");
+    script.src = url;
+    script.async = true;
+    script.onload = callback;
+    wrapper.appendChild(script);
+  }
+
+  // Load the Facebook SDK script asynchronously
+  loadScript(
+    "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
+    function () {
+      // Initialize the Facebook SDK
+      FB.init({
+        appId: "591873306363263",
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: "v13.0"
+      });
+      FB.XFBML.parse(wrapper);
+    }
+  );
+}
+
+function loadFacebookSDKLazy() {
+  if (window.requestIdleCallback) {
+    requestIdleCallback(function () {
+      loadFacebookSDK();
+    });
+  } else {
+    setTimeout(function () {
+      loadFacebookSDK();
+    }, 500);
+  }
+}
+
+// Trigger the lazy loading of the Facebook SDK when the window finishes loading
+window.addEventListener("load", loadFacebookSDKLazy);
 
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
