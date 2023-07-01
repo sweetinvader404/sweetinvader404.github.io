@@ -1164,5 +1164,54 @@
         imageElement.addEventListener("load", handleImageLoad);
       });
     </script>
+    <script>
+      function loadFacebookChat() {
+        var wrapper = document.getElementById("fb-customerchat-wrapper");
+        var script = document.createElement("script");
+        script.innerHTML = `
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: "591873306363263",
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: "v13.0"
+      });
+
+      FB.Event.subscribe("xfbml.render", function() {
+        var fbChat = document.querySelector(".fb-customerchat");
+        if (fbChat) {
+          fbChat.setAttribute("fb-xfbml-state", "RENDERED");
+          fbChat.classList.add("fb-loaded");
+        }
+      });
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  `;
+        wrapper.appendChild(script);
+      }
+
+      function loadFacebookChatLazy() {
+        if (window.requestIdleCallback) {
+          requestIdleCallback(function () {
+            loadFacebookChat();
+          });
+        } else {
+          setTimeout(function () {
+            loadFacebookChat();
+          }, 500);
+        }
+      }
+
+      // Trigger the lazy loading of the Facebook chat plugin when the window finishes loading
+      window.addEventListener("load", loadFacebookChatLazy);
+    </script>
   </body>
 </html>
