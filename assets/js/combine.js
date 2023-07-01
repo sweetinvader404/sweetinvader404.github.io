@@ -441,10 +441,24 @@ function initializeChatbox() {
     if (!window.chatboxInitialized) {
       // Initialize the chatbox
       FB.CustomerChat.hideDialog();
-      FB.CustomerChat.showDialog();
+
+      // Check if the chatbox is minimized
+      if (!window.chatboxMinimized) {
+        FB.CustomerChat.showDialog();
+      }
+
       window.chatboxInitialized = true;
     }
   }
+}
+
+function minimizeChatbox() {
+  window.chatboxMinimized = true;
+}
+
+function restoreChatbox() {
+  window.chatboxMinimized = false;
+  initializeChatbox();
 }
 
 function loadFacebookSDKLazy() {
@@ -461,6 +475,10 @@ function loadFacebookSDKLazy() {
 
 // Trigger the lazy loading of the Facebook SDK when the window finishes loading
 window.addEventListener("load", loadFacebookSDKLazy);
+
+// Attach event listeners to minimize and restore the chatbox
+window.addEventListener("blur", minimizeChatbox);
+window.addEventListener("focus", restoreChatbox);
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
 
