@@ -1,4 +1,4 @@
-#testimonial {
+/* #testimonial {
   background-image: url("../images/Testimonials/testimonial-background.webp");
   background-position: center center;
   background-repeat: no-repeat;
@@ -68,4 +68,162 @@
   font-size: 2rem;
   font-weight: 700;
   line-height: 2rem;
+} */
+
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #ff9800, #182860);
+}
+.slideshow-container .mySlides {
+  min-height: 490px;
+  display: none;
+  padding: 30px 10px;
+}
+@media (min-width: 768px) {
+  .slideshow-container .mySlides {
+    min-height: 370px;
+  }
+}
+@media (min-width: 768px) {
+  .slideshow-container .mySlides {
+    padding: 45px 35px;
+  }
+}
+.slideshow-container .mySlides .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  text-align: center;
+}
+.slideshow-container .mySlides .text {
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 8px 4px;
+}
+@media (min-width: 768px) {
+  .slideshow-container .mySlides .text {
+    padding: 8px 12px;
+  }
+}
+.slideshow-container .mySlides img {
+  width: 60px;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px 8px 24px 8px;
+}
+.slideshow-container .mySlides .designation {
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+}
+.slideshow-container .bg1 {
+  background: #42378f;
+  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  /* fallback */
+  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
+    linear-gradient(315deg, #42378f 0%, #f53844 74%);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
+.slideshow-container .bg2 {
+  background: #045de9;
+  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  /* fallback */
+  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
+    linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
+.slideshow-container .bg3 {
+  background: #7f53ac;
+  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png");
+  /* fallback */
+  background-image: url("https://shihabiiuc.github.io/testimonialslider/img/pen.png"),
+    linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+}
+.slideshow-container .prev,
+.slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.slideshow-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
 }
