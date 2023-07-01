@@ -345,56 +345,6 @@ sections.forEach(e => {
 // })(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
-// function loadFacebookSDK() {
-//   var wrapper = document.getElementById("fb-customerchat-wrapper");
-
-//   if (!wrapper) {
-//     console.error(
-//       "Wrapper element not found. Please make sure the 'fb-customerchat-wrapper' element exists in your HTML."
-//     );
-//     return;
-//   }
-
-//   if (typeof FB !== "undefined" && FB !== null && FB.XFBML && FB.XFBML.parse) {
-
-//     FB.XFBML.parse(wrapper);
-//   } else {
-
-//     function loadScript(url, callback) {
-//       var script = document.createElement("script");
-//       script.src = url;
-//       script.async = true;
-//       script.onload = callback;
-//       wrapper.appendChild(script);
-//     }
-
-//     loadScript(
-//       "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
-//       function () {
-
-//         FB.init({
-//           xfbml: true,
-//           version: "v13.0"
-//         });
-//         FB.XFBML.parse(wrapper);
-//       }
-//     );
-//   }
-// }
-
-// function loadFacebookSDKLazy() {
-//   if (window.requestIdleCallback) {
-//     requestIdleCallback(function () {
-//       loadFacebookSDK();
-//     });
-//   } else {
-//     setTimeout(function () {
-//       loadFacebookSDK();
-//     }, 500);
-//   }
-// }
-
-// window.addEventListener("load", loadFacebookSDKLazy);
 function loadFacebookSDK() {
   var wrapper = document.getElementById("fb-customerchat-wrapper");
 
@@ -408,7 +358,7 @@ function loadFacebookSDK() {
   // Check if the Facebook SDK script has already been loaded
   if (typeof FB !== "undefined" && FB !== null && FB.XFBML && FB.XFBML.parse) {
     // The Facebook SDK has already been loaded and initialized
-    initializeChatbox();
+    FB.XFBML.parse(wrapper);
   } else {
     // Create a function to load the Facebook SDK script asynchronously
     function loadScript(url, callback) {
@@ -428,23 +378,9 @@ function loadFacebookSDK() {
           xfbml: true,
           version: "v13.0"
         });
-
-        initializeChatbox();
+        FB.XFBML.parse(wrapper);
       }
     );
-  }
-}
-
-function initializeChatbox() {
-  if (typeof FB !== "undefined" && FB !== null && FB.CustomerChat) {
-    // Check if the chatbox has already been loaded
-    if (!window.chatboxLoaded) {
-      // Initialize the chatbox
-      FB.XFBML.parse();
-
-      // Set the flag to indicate that the chatbox has been loaded
-      window.chatboxLoaded = true;
-    }
   }
 }
 
@@ -462,6 +398,7 @@ function loadFacebookSDKLazy() {
 
 // Trigger the lazy loading of the Facebook SDK when the window finishes loading
 window.addEventListener("load", loadFacebookSDKLazy);
+
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
 
