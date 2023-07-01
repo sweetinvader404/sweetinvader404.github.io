@@ -1,0 +1,170 @@
+body,
+button,
+h1,
+h3,
+h4,
+h5,
+p {
+  font-family: poppins;
+}
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #dfdfde;
+  --margin: 20px;
+  --theme-primary-color: #44cbe1;
+  --theme-background-color-main: #222222;
+  --neural-background-color: #2e313e;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+body {
+  background-color: var(--white);
+  margin: 0;
+  font-size: 13px;
+  color: var(--white);
+}
+h1,
+h3,
+h4,
+h5,
+p {
+  color: #fff;
+  font-style: normal;
+  font-size: 1.6rem;
+}
+h1,
+h3,
+h4,
+h5 {
+  font-size: 2.5rem;
+  line-height: 0.1rem;
+}
+img {
+  object-fit: cover;
+}
+section {
+  padding: 2rem;
+}
+
+button {
+  padding: 1rem 3rem;
+  margin: 1rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.centered-content .about-button {
+  border: 2px solid var(--theme-primary-color);
+  color: var(--white);
+  background: 0 0;
+}
+#personality,
+#portfolio,
+#blog {
+  background-color: #222;
+}
+#about {
+  background-color: #2a2a2a;
+}
+#skills,
+#services {
+  background-color: #13121a;
+}
+#qualifications {
+  background-color: #333;
+}
+#testimonial {
+  background-image: url(../images/Testimonials/testimonial-background.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about button,
+.centered-content .hire-button {
+  background-color: #1a8697;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+}
+#about button:hover,
+.centered-content .about-button:hover,
+.centered-content .hire-button:hover {
+  background-color: var(--theme-primary-color);
+  transition: transform 0.3s ease-in;
+  color: #fff;
+}
+#about button:hover,
+.centered-content .hire-button:hover {
+  background-color: #17698c;
+}
+#about,
+/* #contact, */
+#contact .brief-description,
+#contact .icon-box,
+#contact .contact-item,
+#contact .three-column,
+#about .about-section,
+#about .image-column,
+#about .two-column,
+#home,
+#personality .brief-description,
+#personality .icon-box,
+#personality .personality-item,
+#personality .three-column,
+#skills {
+  display: flex;
+}
+#about,
+#about .content-column,
+#about .image-column,
+/* #contact, */
+#contact .brief-description,
+#contact .icon-box,
+#contact .three-column,
+#home,
+#personality,
+#personality .brief-description,
+#personality .icon-box,
+#personality .three-column,
+#skills {
+  justify-content: center;
+}
+#about,
+#about .content-column,
+#about .image-column,
+#contact,
+#contact .brief-description,
+#contact .icon-box,
+#contact .three-column #home,
+#personality,
+#personality .brief-description,
+#personality .icon-box,
+#personality .three-column {
+  align-items: center;
+}
+#map {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+#map::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+}

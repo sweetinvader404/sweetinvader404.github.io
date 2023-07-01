@@ -1,0 +1,115 @@
+#contact {
+  min-height: 100vh;
+  /* min-height: max-content; */
+  padding-bottom: 2em;
+}
+.contact-item,
+.contact-item2,
+.contact-section,
+.three-column {
+  background-color: #13121a;
+}
+.contact-section {
+  min-height: max-content;
+  gap: 20px;
+  padding: 2rem;
+  z-index: 0;
+}
+.brief-description {
+  flex-direction: column;
+  margin: 2rem;
+}
+.description-wrapper,
+.title-wrapper {
+  text-align: center;
+  margin: 10px;
+}
+
+.contact-wrapper {
+  width: 33.3%;
+}
+.contact-two-column {
+  display: flex;
+}
+.contact-two-column .contact-service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  background-color: #44cbe1;
+  border-radius: 50%;
+  margin-right: 2em;
+}
+
+.contact-service-icon {
+  width: 50%;
+  text-align: center;
+}
+.contact-column-form {
+  width: 50%;
+  text-align: center;
+}
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+/*********************************8Contact******************************/
+
+.contact-column-form {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.contact-column-form h2 {
+  text-align: center;
+}
+
+.contact-column-form input[type="text"],
+.contact-column-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.contact-column-form input[type="submit"] {
+  background-color: transparent;
+  color: white;
+  border: 2px solid var(--theme-primary-color);
+  padding: 10px 60px;
+  cursor: pointer;
+  float: left;
+  font-family: "Poppins";
+  font-size: 2rem;
+}
+
+.container input[type="submit"]:hover {
+  background-color: #222;
+}
+.name-email,
+.write-message {
+  display: flex;
+}
+.contact-column-form input[type="text"] {
+  margin: 1em 0em;
+}
+.contact-column-form textarea {
+  min-height: 16em;
+}
+input,
+textarea {
+  background-color: #2222;
+}
+.contact-column-form h2 {
+  font-family: "Poppins";
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1rem;
+  text-align: left;
+}
