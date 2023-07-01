@@ -282,7 +282,31 @@ sections.forEach(e => {
 }),
   window.addEventListener("scroll", updateNavigationStyle),
   updateNavigationStyle();
+/****************Defer facebook messenger******************** */
+function loadFacebookMessengerChat() {
+  // Check if the function has already been called
+  if (window.loadFacebookMessengerChat.loaded) return;
+  window.loadFacebookMessengerChat.loaded = true;
 
+  // Create a script element
+  const script = document.createElement("script");
+  script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+  script.defer = true;
+  script.onload = () => {
+    // Initialize the messenger chat
+    window.FB.init({
+      xfbml: true,
+      version: "v12.0"
+    });
+    window.FB.CustomerChat.showDialog();
+  };
+  // Append the script element to the document
+  document.body.appendChild(script);
+}
+
+// Load the chat when the page finishes loading
+window.addEventListener("load", loadFacebookMessengerChat);
+/****************Defer facebook messenger******************** */
 /****************Official FACEBOOK SDK****************** */
 window.fbAsyncInit = function () {
   FB.init({
@@ -304,31 +328,7 @@ window.fbAsyncInit = function () {
 })(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
-/****************Defer facebook messenger******************** */
-function loadFacebookMessengerChat() {
-  // Check if the function has already been called
-  if (window.loadFacebookMessengerChat.loaded) return;
-  window.loadFacebookMessengerChat.loaded = true;
 
-  // Create a script element
-  const script = document.createElement("script");
-  script.defer = true;
-  script.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-  script.onload = () => {
-    // Initialize the messenger chat
-    window.FB.init({
-      xfbml: true,
-      version: "v12.0"
-    });
-    window.FB.CustomerChat.showDialog();
-  };
-  // Append the script element to the document
-  document.body.appendChild(script);
-}
-
-// Load the Facebook Messenger Chat when the page finishes loading
-window.addEventListener("load", loadFacebookMessengerChat);
-/****************Defer facebook messenger******************** */
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
 
