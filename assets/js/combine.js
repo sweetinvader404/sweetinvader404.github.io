@@ -343,7 +343,14 @@ sections.forEach(e => {
 //   js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
 //   fjs.parentNode.insertBefore(js, fjs);
 // })(document, "script", "facebook-jssdk");
+
+/******************End official Facebook**************** */
 function loadFacebookChat() {
+  var fbChat = document.getElementById("fb-customerchat-wrapper");
+  fbChat.setAttribute("fb-xfbml-state", "RENDERED");
+  fbChat.innerHTML =
+    '<div class="fb-customerchat" attribution="setup_tool" page_id="113810161758805" theme_color="#084E8A" logged_in_greeting="Hello! How can we assist you today?" logged_out_greeting="Hello! How can we assist you today?"></div>';
+
   // Load the Facebook SDK asynchronously
   window.fbAsyncInit = function () {
     FB.init({
@@ -352,9 +359,7 @@ function loadFacebookChat() {
       xfbml: true,
       version: "v13.0"
     });
-
-    // Initialize the Facebook chat plugin
-    FB.CustomerChat.showDialog();
+    FB.XFBML.parse(fbChat);
   };
 
   (function (d, s, id) {
@@ -382,8 +387,6 @@ function loadFacebookChatLazy() {
 
 // Trigger the lazy loading of the Facebook chat plugin when the window finishes loading
 window.addEventListener("load", loadFacebookChatLazy);
-
-/****************end Official FACEBOOK SDK****************** */
 
 /******************************End Script****************************** */
 /******************************Leaflet****************************** */
