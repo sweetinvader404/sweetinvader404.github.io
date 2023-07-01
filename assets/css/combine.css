@@ -741,9 +741,9 @@ header .navbar a {
 }
 .slideshow-container .bg1 {
   background: #44cbe1;
-  background-image: url("assets/images/Testimonials/pen.png");
+  background-image: url("../images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("assets/images/Testimonials/pen.png"),
+  background-image: url("../images/Testimonials/pen.png"),
     linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
@@ -751,9 +751,9 @@ header .navbar a {
 }
 .slideshow-container .bg2 {
   background: #44cbe1;
-  background-image: url("assets/images/Testimonials/pen.png");
+  background-image: url("../images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("assets/images/Testimonials/pen.png"),
+  background-image: url("../images/Testimonials/pen.png"),
     linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
@@ -761,9 +761,9 @@ header .navbar a {
 }
 .slideshow-container .bg3 {
   background: #44cbe1;
-  background-image: url("assets/images/Testimonials/pen.png");
+  background-image: url("../images/Testimonials/pen.png");
   /* fallback */
-  background-image: url("assets/images/Testimonials/pen.png"),
+  background-image: url("../images/Testimonials/pen.png"),
     linear-gradient(315deg, #3bb1c3 0%, #39a9ba 74%);
   background-repeat: no-repeat;
   background-position: top left;
