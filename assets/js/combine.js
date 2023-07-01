@@ -437,16 +437,13 @@ function loadFacebookSDK() {
 
 function initializeChatbox() {
   if (typeof FB !== "undefined" && FB !== null && FB.CustomerChat) {
-    // Check if the chatbox has already been initialized and shown
-    if (!window.chatboxInitialized) {
+    // Check if the chatbox has already been loaded
+    if (!window.chatboxLoaded) {
       // Initialize the chatbox
-      FB.CustomerChat.showDialog();
-      window.chatboxInitialized = true;
-      window.chatboxShown = true;
-    } else if (!window.chatboxShown) {
-      // Show the chatbox if it has been initialized but not shown
-      FB.CustomerChat.showDialog();
-      window.chatboxShown = true;
+      FB.XFBML.parse();
+
+      // Set the flag to indicate that the chatbox has been loaded
+      window.chatboxLoaded = true;
     }
   }
 }
