@@ -325,79 +325,26 @@ sections.forEach(e => {
 // window.addEventListener("load", loadFacebookMessengerChat);
 /****************Defer facebook messenger******************** */
 /****************Official FACEBOOK SDK****************** */
-// window.fbAsyncInit = function () {
-//   FB.init({
-//     appId: "591873306363263",
-//     autoLogAppEvents: true,
-//     xfbml: true,
-//     version: "v13.0"
-//   });
-// };
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: "591873306363263",
+    autoLogAppEvents: true,
+    xfbml: true,
+    version: "v13.0"
+  });
+};
 
-// (function (d, s, id) {
-//   var js,
-//     fjs = d.getElementsByTagName(s)[0];
-//   if (d.getElementById(id)) return;
-//   js = d.createElement(s);
-//   js.id = id;
-//   js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
-//   fjs.parentNode.insertBefore(js, fjs);
-// })(document, "script", "facebook-jssdk");
+(function (d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
 
 /****************end Official FACEBOOK SDK****************** */
-function loadFacebookSDK() {
-  var wrapper = document.getElementById("fb-customerchat-wrapper");
-
-  if (!wrapper) {
-    console.error(
-      "Wrapper element not found. Please make sure the 'fb-customerchat-wrapper' element exists in your HTML."
-    );
-    return;
-  }
-
-  // Check if the Facebook SDK script has already been loaded
-  if (typeof FB !== "undefined" && FB !== null && FB.XFBML && FB.XFBML.parse) {
-    // The Facebook SDK has already been loaded and initialized
-    FB.XFBML.parse(wrapper);
-  } else {
-    // Create a function to load the Facebook SDK script asynchronously
-    function loadScript(url, callback) {
-      var script = document.createElement("script");
-      script.src = url;
-      script.async = true;
-      script.onload = callback;
-      wrapper.appendChild(script);
-    }
-
-    // Load the Facebook SDK script asynchronously
-    loadScript(
-      "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=591873306363263&autoLogAppEvents=1",
-      function () {
-        // Initialize the Facebook SDK
-        FB.init({
-          xfbml: true,
-          version: "v13.0"
-        });
-        FB.XFBML.parse(wrapper);
-      }
-    );
-  }
-}
-
-function loadFacebookSDKLazy() {
-  if (window.requestIdleCallback) {
-    requestIdleCallback(function () {
-      loadFacebookSDK();
-    });
-  } else {
-    setTimeout(function () {
-      loadFacebookSDK();
-    }, 500);
-  }
-}
-
-// Trigger the lazy loading of the Facebook SDK when the window finishes loading
-window.addEventListener("load", loadFacebookSDKLazy);
 
 /******************************End Script****************************** */
 /******************************Contact Form****************************** */
