@@ -70,6 +70,8 @@
 }
 
 .contact-column-form input[type="text"],
+.contact-column-form input[type="email"],
+.contact-column-form input[type="number"],
 .contact-column-form textarea {
   width: 100%;
   padding: 10px;
@@ -78,7 +80,7 @@
   resize: vertical;
 }
 
-.contact-column-form input[type="submit"] {
+.contact-column-form button {
   background-color: transparent;
   color: white;
   border: 2px solid var(--theme-primary-color);
