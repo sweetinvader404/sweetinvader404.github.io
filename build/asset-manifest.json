@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.25615400.css",
+    "main.js": "/static/js/main.991b5f5a.js",
+    "static/media/spritesheet.png": "/static/media/spritesheet.6ba35694444f9cfc8185.png",
+    "static/media/hero-puzzle.svg": "/static/media/hero-puzzle.13a0b551d13ff68d05990ae864dc6a51.svg",
+    "static/media/plus.svg": "/static/media/plus.a2c7136564b5854c9c46960579cbc83b.svg",
+    "index.html": "/index.html",
+    "static/media/minus.svg": "/static/media/minus.cb0bfb983cf61f8483b2fef46439cd37.svg",
+    "main.25615400.css.map": "/static/css/main.25615400.css.map",
+    "main.991b5f5a.js.map": "/static/js/main.991b5f5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.25615400.css",
+    "static/js/main.991b5f5a.js"
+  ]
+}
